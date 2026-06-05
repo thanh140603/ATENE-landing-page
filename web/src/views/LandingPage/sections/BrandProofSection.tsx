@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { BRANDS } from '../../../consts/brands'
 import { useI18n } from '../../../app/i18n/I18nContext'
 import styles from '../../../styles/brands.module.css'
@@ -7,6 +8,56 @@ const VIDEO_CLASS: Record<string, string> = {
   BABACO: 'videoBabaco',
   CELONIA: 'videoCelonia',
   DELERE: 'videoDelere',
+}
+
+type BrandVideoProps = {
+  src: string
+  name: string
+  caption: string
+  className: string
+}
+
+function BrandVideo({ src, name, caption, className }: BrandVideoProps) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [playing, setPlaying] = useState(false)
+
+  const togglePlay = () => {
+    const video = videoRef.current
+    if (!video) return
+
+    if (video.paused) {
+      void video.play()
+    } else {
+      video.pause()
+    }
+  }
+
+  return (
+    <div className={className}>
+      <video
+        ref={videoRef}
+        className={styles.videoEl}
+        src={src}
+        playsInline
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+      />
+
+      {!playing ? (
+        <button type="button" className={styles.videoLink} onClick={togglePlay} aria-label={`${name} video`}>
+          <span className={styles.playCircle} aria-hidden="true">
+            <span className={styles.playTriangle} />
+          </span>
+        </button>
+      ) : (
+        <button type="button" className={styles.videoTap} onClick={togglePlay} aria-label={`Pause ${name} video`} />
+      )}
+
+      <div className={styles.videoCaption}>▶ {caption}</div>
+    </div>
+  )
 }
 
 export function BrandProofSection() {
@@ -29,25 +80,16 @@ export function BrandProofSection() {
           {BRANDS.map((b, idx) => {
             const reverse = idx % 2 === 1
             const videoClass = styles[VIDEO_CLASS[b.id] as keyof typeof styles] ?? ''
+            const caption = `${b.name}｜${locale === 'ja' ? b.videoCaptionJa : b.videoCaptionEn}`
 
             return (
               <article key={b.id} className={`${styles.card} ${reverse ? styles.cardReverse : ''}`}>
-                <div className={`${styles.video} ${videoClass}`}>
-                  <a
-                    className={styles.videoLink}
-                    href={b.videoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${b.name} video`}
-                  >
-                    <span className={styles.playCircle} aria-hidden="true">
-                      <span className={styles.playTriangle} />
-                    </span>
-                  </a>
-                  <div className={styles.videoCaption}>
-                    ▶ {b.name}｜{locale === 'ja' ? b.videoCaptionJa : b.videoCaptionEn}
-                  </div>
-                </div>
+                <BrandVideo
+                  src={b.videoSrc}
+                  name={b.name}
+                  caption={caption}
+                  className={`${styles.video} ${videoClass}`}
+                />
 
                 <div className={styles.text}>
                   <div className={styles.kicker}>{b.commissionLabel}</div>

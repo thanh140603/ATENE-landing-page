@@ -1,3 +1,8 @@
+import puritoVideo from '../assets/vids/purito.mp4'
+import babacoVideo from '../assets/vids/babaco.mp4'
+import celoniaVideo from '../assets/vids/celonia.mp4'
+import delereVideo from '../assets/vids/delere.mp4'
+
 export type BrandId = 'PURITO' | 'BABACO' | 'CELONIA' | 'DELERE'
 
 export type BrandMetric = {
@@ -15,11 +20,7 @@ export type Brand = {
   metrics: BrandMetric[]
   videoCaptionJa: string
   videoCaptionEn: string
-  /**
-   * TODO (owner task #3): replace with actual video URLs.
-   * Must open without login (incognito).
-   */
-  videoUrl: string
+  videoSrc: string
 }
 
 export const BRANDS: Brand[] = [
@@ -31,7 +32,7 @@ export const BRANDS: Brand[] = [
     hook: '世界が認めた定番。説明不要で売れる。',
     videoCaptionJa: 'グローバルバイラル動画',
     videoCaptionEn: 'global viral video',
-    videoUrl: 'https://example.com/purito-video',
+    videoSrc: puritoVideo,
     metrics: [
       { value: 'Global', labelJa: 'バイラル実績', labelEn: 'Viral track record' },
       { value: '★【4.X】', labelJa: '平均レビュー評価', labelEn: 'Average review rating' },
@@ -46,7 +47,7 @@ export const BRANDS: Brand[] = [
     hook: '貼るだけビフォーアフター。ライブ映えNo.1のニキビパッチ。',
     videoCaptionJa: 'バイラル動画',
     videoCaptionEn: 'viral video',
-    videoUrl: 'https://example.com/babaco-video',
+    videoSrc: babacoVideo,
     metrics: [
       { value: 'No.1', labelJa: 'ニキビケア部門', labelEn: 'Acne care category' },
       { value: '【数値】', labelJa: 'パッチ累計販売', labelEn: 'Patch sales' },
@@ -61,7 +62,7 @@ export const BRANDS: Brand[] = [
     hook: 'コラボは即完売の常連。出せば、動く。',
     videoCaptionJa: 'コラボ即完売の実績',
     videoCaptionEn: 'sold-out collab record',
-    videoUrl: 'https://example.com/celonia-video',
+    videoSrc: celoniaVideo,
     metrics: [
       { value: '即完売', labelJa: 'コラボ実績', labelEn: 'Collab record' },
       { value: 'TOP', labelJa: 'Qoo10ランキング', labelEn: 'Qoo10 ranking' },
@@ -76,7 +77,7 @@ export const BRANDS: Brand[] = [
     hook: 'キャビア配合のプレミアム。単価が高い＝あなたの報酬も大きい。',
     videoCaptionJa: 'プレミアム キャビアライン',
     videoCaptionEn: 'premium caviar line',
-    videoUrl: 'https://example.com/delere-video',
+    videoSrc: delereVideo,
     metrics: [
       { value: '主力', labelJa: 'メガ割フラッグシップ', labelEn: 'Mega-wari flagship' },
       { value: 'High', labelJa: '客単価・還元率', labelEn: 'Unit price & return' },
