@@ -1,0 +1,187 @@
+.eyebrow {
+  font-family: 'Times New Roman', 'Noto Serif JP', Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent-2);
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 70ch;
+}
+
+.grid {
+  margin-top: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  border-radius: var(--radius);
+  border: 1px solid rgba(31, 26, 28, 0.06);
+  background: #ffffff;
+  padding: 20px 18px;
+  min-height: 280px;
+  box-shadow: none;
+}
+
+.cardStandard {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.cardTag {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.cardStandard .cardTag {
+  color: var(--accent-2);
+}
+
+.cardTitle {
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cardStandard .cardTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cardValue {
+  font-weight: 900;
+  font-size: 56px;
+  letter-spacing: -0.03em;
+  margin-top: 20px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.cardStandard .cardValue {
+  color: #fff;
+}
+
+.valuePercent {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.valuePercentSign {
+  font-size: 22px;
+  font-weight: 900;
+  transform: translateY(-12px);
+}
+
+.valueAlpha {
+  font-size: 58px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.cardList {
+  margin: 18px 0 0;
+  padding-left: 0;
+  color: rgba(31, 26, 28, 0.72);
+  line-height: 1.85;
+  font-size: 13px;
+  list-style: none;
+}
+
+.cardList li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(31, 26, 28, 0.08);
+}
+
+.cardList li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.cardList li::before {
+  content: '—';
+  flex-shrink: 0;
+  color: rgba(31, 26, 28, 0.35);
+}
+
+.cardStandard .cardList {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cardStandard .cardList li {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+.cardStandard .cardList li:first-child {
+  border-top: 0;
+}
+
+.cardStandard .cardList li::before {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.counterOfferBox {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(31, 26, 28, 0.22);
+  background: var(--bg-warm);
+}
+
+.counterOfferTitle {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.counterOfferText {
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(31, 26, 28, 0.64);
+  max-width: 56ch;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 140ms ease;
+}
+
+.ctaBtn:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .counterOfferBox {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaBtn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,88 @@
+.section {
+  padding: 72px 0;
+}
+
+.card {
+  padding: 28px 32px 32px;
+  background: #ffffff;
+  border: 1px solid rgba(31, 26, 28, 0.06);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(22, 17, 18, 0.07);
+}
+
+.title {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(31, 26, 28, 0.1);
+}
+
+.tableRow:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.cell {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.k {
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.sep {
+  margin: 0 4px;
+  color: rgba(31, 26, 28, 0.45);
+}
+
+.v {
+  color: rgba(31, 26, 28, 0.78);
+}
+
+.formBtnWrap {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.formBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(100%, 360px);
+  padding: 14px 28px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  transition: transform 140ms ease;
+}
+
+.formBtn:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 840px) {
+  .card {
+    padding: 22px 20px 24px;
+  }
+
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
