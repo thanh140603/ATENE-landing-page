@@ -21,6 +21,7 @@ export type Brand = {
   videoCaptionJa: string
   videoCaptionEn: string
   videoSrc: string
+  detailUrl?: string
 }
 
 export const BRANDS: Brand[] = [
@@ -29,14 +30,16 @@ export const BRANDS: Brand[] = [
     name: 'PURITO',
     commissionLabel: '報酬 20%',
     tagline: 'Global viral, proven worldwide',
-    hook: '世界が認めた定番。説明不要で売れる。',
+    hook:
+      '世界中で話題されたグローバルバイラルブランド。すでに認知度が高く、初見でも視聴者が反応しやすいのが強み。ライブ招待のパートナーにもおすすめです。',
     videoCaptionJa: 'グローバルバイラル動画',
     videoCaptionEn: 'global viral video',
     videoSrc: puritoVideo,
+    detailUrl: 'https://app.notion.com/p/Purito-375f227e2fb08001a749caba9abbfa80?pvs=25',
     metrics: [
       { value: 'Global', labelJa: 'バイラル実績', labelEn: 'Viral track record' },
-      { value: '★【4.X】', labelJa: '平均レビュー評価', labelEn: 'Average review rating' },
-      { value: '【数値】', labelJa: '韓国累計販売数', labelEn: 'Cumulative sales in Korea' },
+      { value: '★ 4.7', labelJa: 'Qoo10での平均評価', labelEn: 'Average rating on Qoo10' },
+      { value: 'TOP 1', labelJa: 'OLIVE YOUNG', labelEn: 'OLIVE YOUNG' },
     ],
   },
   {
@@ -44,14 +47,15 @@ export const BRANDS: Brand[] = [
     name: 'BABACO',
     commissionLabel: '報酬 25%',
     tagline: 'Acne care, that actually sticks',
-    hook: '貼るだけビフォーアフター。ライブ映えNo.1のニキビパッチ。',
+    hook:
+      '独自のバイオテクノロジー技術を採用。主力製品「フォアバランス スポッチュ」。このニキビケア製品は使いやすく、ライブ配信にも適しています。効果はネットで拡散された動画でも実証されています。',
     videoCaptionJa: 'バイラル動画',
     videoCaptionEn: 'viral video',
     videoSrc: babacoVideo,
+    detailUrl: 'https://app.notion.com/p/Babaco-375f227e2fb080289d58cfe262a6ba91?pvs=25',
     metrics: [
-      { value: 'No.1', labelJa: 'ニキビケア部門', labelEn: 'Acne care category' },
-      { value: '【数値】', labelJa: 'パッチ累計販売', labelEn: 'Patch sales' },
-      { value: '【％】', labelJa: 'リピート率', labelEn: 'Repeat rate' },
+      { value: 'No.1', labelJa: 'カテゴリ：ニキビケア', labelEn: 'Category: Acne care' },
+      { value: '~40%', labelJa: 'リピート率', labelEn: 'Repeat rate' },
     ],
   },
   {
@@ -59,29 +63,31 @@ export const BRANDS: Brand[] = [
     name: 'CELONIA',
     commissionLabel: '報酬 25%',
     tagline: 'Sold out, again and again',
-    hook: 'コラボは即完売の常連。出せば、動く。',
+    hook:
+      '独自のNGF37幹細胞成分研究。韓国と日本で常に売り切れ、Qoo10のランキングでも上位にランクイン。ブランドの認知度と信頼性が非常に高いです。',
     videoCaptionJa: 'コラボ即完売の実績',
     videoCaptionEn: 'sold-out collab record',
     videoSrc: celoniaVideo,
+    detailUrl: 'https://app.notion.com/p/Celonia-375f227e2fb080fb89cef0869271ed35?pvs=25',
     metrics: [
-      { value: '即完売', labelJa: 'コラボ実績', labelEn: 'Collab record' },
-      { value: 'TOP', labelJa: 'Qoo10ランキング', labelEn: 'Qoo10 ranking' },
-      { value: '【数値】', labelJa: 'レビュー件数', labelEn: 'Review count' },
+      { value: 'NO.1', labelJa: 'PREMIUM ANTI-AGING', labelEn: 'PREMIUM ANTI-AGING' },
+      { value: 'TOP 1', labelJa: 'Qoo10ランキング', labelEn: 'Qoo10 ranking' },
     ],
   },
   {
     id: 'DELERE',
     name: 'DELERE',
     commissionLabel: '報酬 25% ・ 主力',
-    tagline: 'Caviar premium, the flagship',
-    hook: 'キャビア配合のプレミアム。単価が高い＝あなたの報酬も大きい。',
+    tagline: 'Aesthetic glow capturing the pure essence of caviar',
+    hook:
+      'ATENEの主力ブランド。キャビアを贅沢に使ったプレミアムK-Beautyライン。希少価値が高く、25周年記念仕様、毎回のメガが目玉です。',
     videoCaptionJa: 'プレミアム キャビアライン',
     videoCaptionEn: 'premium caviar line',
     videoSrc: delereVideo,
+    detailUrl: 'https://app.notion.com/p/Delere-375f227e2fb080449f83e50b03c2906f?pvs=25',
     metrics: [
-      { value: '主力', labelJa: 'メガ割フラッグシップ', labelEn: 'Mega-wari flagship' },
-      { value: 'High', labelJa: '客単価・還元率', labelEn: 'Unit price & return' },
-      { value: 'Caviar', labelJa: 'プレミアム処方', labelEn: 'Premium formula' },
+      { value: 'HIGH', labelJa: '希少価値が高い', labelEn: 'High scarcity value' },
+      { value: 'キャビア', labelJa: '高級成分', labelEn: 'Premium ingredient' },
     ],
   },
 ]

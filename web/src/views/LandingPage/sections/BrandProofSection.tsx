@@ -106,6 +106,17 @@ export function BrandProofSection() {
                     ))}
                   </div>
                 </div>
+
+                {b.detailUrl ? (
+                  <a
+                    className={styles.moreBar}
+                    href={b.detailUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {locale === 'ja' ? 'もっと見る' : 'See more'}
+                  </a>
+                ) : null}
               </article>
             )
           })}

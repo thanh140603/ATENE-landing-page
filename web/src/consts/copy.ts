@@ -27,10 +27,14 @@ export const COPY_JA: Copy = {
     '実績に自信のある方へ。レートは交渉可能です。フォームの「希望レート」に数字をご記入ください。',
   bookingUrgency: '枠は先着順。埋まり次第、締め切ります。',
   brandHooks: {
-    PURITO: '世界が認めた定番。説明不要で売れる。',
-    BABACO: '貼るだけビフォーアフター。ライブ映えNo.1のニキビパッチ。',
-    CELONIA: 'コラボは即完売の常連。出せば、動く。',
-    DELERE: 'キャビア配合のプレミアム。単価が高い＝あなたの報酬も大きい。',
+    PURITO:
+      '世界中で話題されたグローバルバイラルブランド。すでに認知度が高く、初見でも視聴者が反応しやすいのが強み。ライブ招待のパートナーにもおすすめです。',
+    BABACO:
+      '独自のバイオテクノロジー技術を採用。主力製品「フォアバランス スポッチュ」。このニキビケア製品は使いやすく、ライブ配信にも適しています。効果はネットで拡散された動画でも実証されています。',
+    CELONIA:
+      '独自のNGF37幹細胞成分研究。韓国と日本で常に売り切れ、Qoo10のランキングでも上位にランクイン。ブランドの認知度と信頼性が非常に高いです。',
+    DELERE:
+      'ATENEの主力ブランド。キャビアを贅沢に使ったプレミアムK-Beautyライン。希少価値が高く、25周年記念仕様、毎回のメガが目玉です。',
   },
   dealTermsProposed:
     '無償（1ブランド1〜2点）/ 承認後3〜5営業日 / 月末締め・翌月15日払い / ¥5,000〜 / SNS・広告で二次利用可（クレジット表記）',
@@ -54,10 +58,14 @@ export const COPY_EN: Copy = {
     'If you have strong past results, we are open to rate negotiations. Please fill in your preferred rate in the “希望レート / desired rate” field in the form.',
   bookingUrgency: 'Slots are first-come, first-served and will close as soon as they are filled.',
   brandHooks: {
-    PURITO: 'A proven global staple. Sells without much explanation.',
-    BABACO: 'Just stick and show the before/after. The most live-friendly acne patch.',
-    CELONIA: 'Collabs that sell out again and again. When it goes live, it moves.',
-    DELERE: 'Premium line with caviar extract. Higher price point = higher commission for you.',
+    PURITO:
+      'A globally viral brand that took the world by storm. High awareness means viewers react easily, even on first exposure. Highly recommended for partners doing live invite streams.',
+    BABACO:
+      'Powered by proprietary biotechnology. Hero product: "Fore Balance Spot Patch." Easy to use and ideal for live streams. Results proven in viral videos across the web.',
+    CELONIA:
+      'Built on proprietary NGF37 stem cell research. Consistently sold out in Korea and Japan, ranking top on Qoo10. Exceptionally high brand awareness and trust.',
+    DELERE:
+      "ATENE's flagship brand. A premium K-Beauty line lavishly formulated with caviar. High scarcity value — 25th anniversary editions make every Mega-wari a headline event.",
   },
   dealTermsProposed:
     'Free product (1–2 SKUs per brand) / Ships within 3–5 business days after approval / Payout on the 15th of the following month / Minimum payout ¥5,000 / We may reuse your content for SNS & ads with credit.',
