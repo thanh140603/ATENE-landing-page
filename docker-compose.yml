@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: atene-landing-page
+    ports:
+      - "5173:5173"
+    restart: unless-stopped
