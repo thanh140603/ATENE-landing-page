@@ -6,7 +6,7 @@ export function FaqSection() {
   const { locale, copy } = useI18n()
 
   return (
-    <section id="faq" className={`section ${styles.section}`}>
+    <section id="faq" className={`section section--base ${styles.section}`}>
       <div className="container">
         <div className={styles.header}>
           <div className={styles.eyebrow}>FAQ</div>

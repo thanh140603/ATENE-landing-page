@@ -28,7 +28,7 @@ export const BRANDS: Brand[] = [
   {
     id: 'PURITO',
     name: 'PURITO',
-    commissionLabel: '報酬 20%',
+    commissionLabel: 'コミッション 20%',
     tagline: 'Global viral, proven worldwide',
     hook:
       '世界中で話題されたグローバルバイラルブランド。すでに認知度が高く、初見でも視聴者が反応しやすいのが強み。ライブ招待のパートナーにもおすすめです。',
@@ -45,7 +45,7 @@ export const BRANDS: Brand[] = [
   {
     id: 'BABACO',
     name: 'BABACO',
-    commissionLabel: '報酬 25%',
+    commissionLabel: 'コミッション 25%',
     tagline: 'Acne care, that actually sticks',
     hook:
       '独自のバイオテクノロジー技術を採用。主力製品「フォアバランス スポッチュ」。このニキビケア製品は使いやすく、ライブ配信にも適しています。効果はネットで拡散された動画でも実証されています。',
@@ -55,13 +55,13 @@ export const BRANDS: Brand[] = [
     detailUrl: 'https://app.notion.com/p/Babaco-375f227e2fb080289d58cfe262a6ba91?pvs=25',
     metrics: [
       { value: 'No.1', labelJa: 'カテゴリ：ニキビケア', labelEn: 'Category: Acne care' },
-      { value: '~40%', labelJa: 'リピート率', labelEn: 'Repeat rate' },
+      { value: '40%', labelJa: 'リピート率', labelEn: 'Repeat rate' },
     ],
   },
   {
     id: 'CELONIA',
     name: 'CELONIA',
-    commissionLabel: '報酬 25%',
+    commissionLabel: 'コミッション 25%',
     tagline: 'Sold out, again and again',
     hook:
       '独自のNGF37幹細胞成分研究。韓国と日本で常に売り切れ、Qoo10のランキングでも上位にランクイン。ブランドの認知度と信頼性が非常に高いです。',
@@ -77,7 +77,7 @@ export const BRANDS: Brand[] = [
   {
     id: 'DELERE',
     name: 'DELERE',
-    commissionLabel: '報酬 25% ・ 主力',
+    commissionLabel: 'コミッション 25%',
     tagline: 'Aesthetic glow capturing the pure essence of caviar',
     hook:
       'ATENEの主力ブランド。キャビアを贅沢に使ったプレミアムK-Beautyライン。希少価値が高く、25周年記念仕様、毎回のメガが目玉です。',

@@ -1,6 +1,5 @@
 .section {
   padding: 72px 0;
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
 }
 
 .header {
@@ -8,12 +7,19 @@
 }
 
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 4px;
   font-family: 'Times New Roman', 'Noto Serif JP', Georgia, serif;
   font-style: italic;
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
   color: var(--accent);
+  font-weight: 800;
   text-transform: uppercase;
+  background: var(--accent-2);
+  box-shadow: var(--lime-shadow);
 }
 
 .title {
@@ -25,11 +31,11 @@
 
 .list {
   margin-top: 28px;
-  border-top: 1px solid rgba(31, 26, 28, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .item {
-  border-bottom: 1px solid rgba(31, 26, 28, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .q {
@@ -45,7 +51,7 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(31, 26, 28, 0.84);
+  color: rgba(0, 0, 0, 0.84);
 }
 
 .icon {
@@ -53,7 +59,7 @@
   height: 28px;
   display: grid;
   place-items: center;
-  color: rgba(31, 26, 28, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   flex: 0 0 auto;
   font-size: 20px;
   font-weight: 400;
@@ -62,7 +68,7 @@
 
 .a {
   padding: 0 0 20px;
-  color: rgba(31, 26, 28, 0.68);
+  color: rgba(0, 0, 0, 0.68);
   line-height: 1.85;
   font-size: 14px;
 }

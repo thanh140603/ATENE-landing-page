@@ -1,19 +1,26 @@
 :root {
-  /* Figma page backgrounds */
-  --bg: #f5f1ea;
-  --bg-nav: #f5f1ea;
-  --bg-warm: #eee6dc;
-  --bg-soft: #faf6f0;
-  --bg-sand: #e8e0d5;
-  --surface: #f7f3ec;
-  --surface-elevated: #fdfbf7;
-  --text: #1f1a1c;
-  --muted: rgba(31, 26, 28, 0.68);
-  --border: rgba(31, 26, 28, 0.12);
-  --accent: #5d2028;
-  --accent-2: #b79b6b;
+  /* Canva: black / white / lime */
+  --bg: #ffffff;
+  --bg-nav: #ffffff;
+  --bg-warm: #ffffff;
+  --bg-soft: #f5f5f5;
+  --bg-sand: #000000;
+  --bg-dark: #000000;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --text: #000000;
+  --muted: rgba(0, 0, 0, 0.55);
+  --border: rgba(0, 0, 0, 0.12);
+  --accent: #000000;
+  --accent-2: #dfff00;
+  --accent-brand: #5c2d33;
+  --lime-shadow: 0 4px 16px rgba(223, 255, 0, 0.38);
+  --lime-glow-strong: rgba(223, 255, 0, 0.28);
+  --lime-glow-soft: rgba(223, 255, 0, 0.17);
+  --lime-glow-faint: rgba(223, 255, 0, 0.09);
+  --lime-glow-dark: rgba(223, 255, 0, 0.11);
 
-  --shadow: 0 16px 50px rgba(22, 17, 18, 0.12);
+  --shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
   --radius: 14px;
   --container: 1120px;
 
@@ -89,6 +96,77 @@ img {
   background: var(--bg-sand);
 }
 
+.section--base,
+.section--warm,
+.section--soft,
+.section--dark {
+  position: relative;
+  isolation: isolate;
+}
+
+.section--base::before,
+.section--warm::before,
+.section--soft::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(720px 480px at 90% 12%, var(--lime-glow-soft), transparent 58%);
+}
+
+.section--dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(620px 440px at 94% 8%, var(--lime-glow-dark), transparent 58%);
+}
+
+#commission::before {
+  background:
+    radial-gradient(760px 500px at 8% 88%, var(--lime-glow-soft), transparent 56%),
+    radial-gradient(520px 360px at 4% 72%, var(--lime-glow-faint), transparent 54%);
+}
+
+#brands::before {
+  background: radial-gradient(680px 460px at 88% 20%, var(--lime-glow-soft), transparent 56%);
+}
+
+#company::before {
+  display: none;
+}
+
+#coming-soon::before {
+  background: radial-gradient(700px 480px at 92% 18%, var(--lime-glow-soft), transparent 56%);
+}
+
+#faq::before {
+  background: radial-gradient(680px 460px at 50% 0%, var(--lime-glow-faint), transparent 58%);
+}
+
+.section--base > .container,
+.section--warm > .container,
+.section--soft > .container,
+.section--dark > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section--dark {
+  background: var(--bg-dark);
+  color: #ffffff;
+}
+
+.section--dark .h2 {
+  color: #ffffff;
+}
+
+.section--dark .p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .eyebrow {
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -114,9 +192,9 @@ img {
 }
 
 .btn {
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 12px 18px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   background: var(--surface);
   color: var(--text);
   cursor: pointer;
@@ -124,10 +202,12 @@ img {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  font-weight: 600;
   transition:
     background 140ms ease,
     border-color 140ms ease,
-    transform 140ms ease;
+    transform 140ms ease,
+    opacity 140ms ease;
 }
 
 .btn:hover {
@@ -136,8 +216,8 @@ img {
 
 .btn--primary {
   background: var(--accent);
-  color: #fff;
-  border-color: transparent;
+  color: #ffffff;
+  border-color: var(--accent);
 }
 
 .btn--ghost {
@@ -146,9 +226,9 @@ img {
 
 .card {
   background: var(--surface-elevated);
-  border: 1px solid rgba(31, 26, 28, 0.08);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: 0 12px 40px rgba(22, 17, 18, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
 }
 
 .grid {
@@ -161,4 +241,3 @@ img {
     padding: 64px 0;
   }
 }
-

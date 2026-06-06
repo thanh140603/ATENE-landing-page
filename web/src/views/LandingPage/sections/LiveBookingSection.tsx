@@ -7,6 +7,7 @@ type DayStatus = 'available' | 'few' | 'full' | 'inactive'
 
 type CalendarDay = {
   d: number
+  month: 6 | 7
   status: DayStatus
 }
 
@@ -41,31 +42,45 @@ const DOT_STATUS_CLASS: Record<Exclude<DayStatus, 'inactive'>, string> = {
 
 export function LiveBookingSection() {
   const { locale } = useI18n()
-  const [selected, setSelected] = useState<number | null>(null)
+  const [selected, setSelected] = useState<string | null>(null)
 
   const calendarDays = useMemo<CalendarCell[]>(
     () => [
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      { d: 30, status: 'few' },
-      { d: 31, status: 'available' },
-      { d: 1, status: 'full' },
-      { d: 2, status: 'available' },
-      { d: 3, status: 'available' },
-      { d: 4, status: 'few' },
-      { d: 5, status: 'available' },
-      { d: 6, status: 'few' },
-      { d: 7, status: 'available' },
-      { d: 8, status: 'available' },
-      { d: 9, status: 'few' },
-      { d: 10, status: 'few' },
-      { d: 11, status: 'full' },
-      { d: 12, status: 'inactive' },
-      { d: 13, status: 'inactive' },
+      { d: 1, month: 6, status: 'inactive' },
+      { d: 2, month: 6, status: 'inactive' },
+      { d: 3, month: 6, status: 'inactive' },
+      { d: 4, month: 6, status: 'inactive' },
+      { d: 5, month: 6, status: 'inactive' },
+      { d: 6, month: 6, status: 'inactive' },
+      { d: 7, month: 6, status: 'inactive' },
+      { d: 8, month: 6, status: 'inactive' },
+      { d: 9, month: 6, status: 'inactive' },
+      { d: 10, month: 6, status: 'inactive' },
+      { d: 11, month: 6, status: 'inactive' },
+      { d: 12, month: 6, status: 'inactive' },
+      { d: 13, month: 6, status: 'inactive' },
+      { d: 14, month: 6, status: 'inactive' },
+      { d: 15, month: 6, status: 'inactive' },
+      { d: 16, month: 6, status: 'inactive' },
+      { d: 17, month: 6, status: 'inactive' },
+      { d: 18, month: 6, status: 'inactive' },
+      { d: 19, month: 6, status: 'inactive' },
+      { d: 20, month: 6, status: 'available' },
+      { d: 21, month: 6, status: 'few' },
+      { d: 22, month: 6, status: 'available' },
+      { d: 23, month: 6, status: 'available' },
+      { d: 24, month: 6, status: 'few' },
+      { d: 25, month: 6, status: 'available' },
+      { d: 26, month: 6, status: 'available' },
+      { d: 27, month: 6, status: 'few' },
+      { d: 28, month: 6, status: 'available' },
+      { d: 29, month: 6, status: 'few' },
+      { d: 30, month: 6, status: 'full' },
+      { d: 1, month: 7, status: 'available' },
+      { d: 2, month: 7, status: 'few' },
+      { d: 3, month: 7, status: 'available' },
+      { d: 4, month: 7, status: 'available' },
     ],
     [],
   )
@@ -73,22 +88,22 @@ export function LiveBookingSection() {
   const statusLabels = locale === 'ja' ? STATUS_LABEL_JA : STATUS_LABEL_EN
 
   return (
-    <section id="booking" className="section section--tight section--base">
+    <section id="booking" className="section section--tight section--dark">
       <div className="container">
         <div className={styles.heading}>
           <div className={styles.eyebrow}>LIVE BOOKING</div>
           <h2 className="h2">{locale === 'ja' ? 'ライブ枠を予約' : 'Book your live slot'}</h2>
           <p className={`p ${styles.lead}`}>
             {locale === 'ja'
-              ? 'メガ割期間（5/30〜6/11）の中から、配信希望日を選択してください。枠には限りがあり、先着順です。日付を選ぶと空き時間が表示されます。'
-              : 'Choose your preferred live date during Mega-wari (5/30–6/11). Slots are limited and allocated on a first-come, first-served basis. When you pick a date, available times will appear.'}
+              ? '6月20日～7月4日の期間中、配信希望日を選択してください。枠には限りがあり、先着順でのご案内となります。日付を選ぶと、空いている時間が表示されます。'
+              : 'Between June 20 and July 4, choose your preferred live date. Slots are limited and allocated first-come, first-served. Available times appear when you select a date.'}
           </p>
         </div>
 
         <div className={styles.grid}>
           <div className={styles.calendarCard} aria-label="Live booking calendar">
             <div className={styles.calendarTop}>
-              <div className={styles.monthHeader}>2026 / 05 — 06</div>
+              <div className={styles.monthHeader}>2026 / 06 - 07</div>
               <div className={styles.legendRow}>
                 <span className={styles.legendItem}>
                   <span className={`${styles.dot} ${styles.dotAvailable}`} />
@@ -115,13 +130,14 @@ export function LiveBookingSection() {
               {calendarDays.map((cell, idx) => {
                 if (!cell) return <div key={`empty-${idx}`} className={styles.dayEmpty} />
 
-                const { d, status } = cell
+                const { d, month, status } = cell
+                const key = `${month}-${d}`
                 const isSelectable = status !== 'full' && status !== 'inactive'
-                const isSelected = selected === d
+                const isSelected = selected === key
 
                 return (
                   <button
-                    key={d}
+                    key={key}
                     type="button"
                     className={[
                       styles.dayCell,
@@ -130,7 +146,7 @@ export function LiveBookingSection() {
                     ]
                       .filter(Boolean)
                       .join(' ')}
-                    onClick={() => isSelectable && setSelected(d)}
+                    onClick={() => isSelectable && setSelected(key)}
                     disabled={!isSelectable}
                   >
                     <span className={styles.dayNum}>{d}</span>
@@ -155,7 +171,7 @@ export function LiveBookingSection() {
               </div>
               <div className={styles.selectHint}>
                 {locale === 'ja'
-                  ? '左のカレンダーから配信希望日をタップ。'
+                  ? '左のカレンダーから配信希望日をタップ'
                   : 'Tap your preferred date on the calendar on the left.'}
               </div>
             </div>

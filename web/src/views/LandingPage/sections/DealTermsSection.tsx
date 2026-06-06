@@ -21,7 +21,7 @@ export function DealTermsSection() {
   const { locale } = useI18n()
 
   return (
-    <section className={`section section--sand ${styles.section}`}>
+    <section className={`section section--dark ${styles.section}`}>
       <div className="container">
         <div className={styles.card}>
           <div className={styles.title}>

@@ -1,9 +1,16 @@
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 4px;
   font-family: 'Times New Roman', 'Noto Serif JP', Georgia, serif;
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  color: var(--accent-2);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-weight: 800;
   text-transform: uppercase;
+  background: var(--accent-2);
+  box-shadow: var(--lime-shadow);
 }
 
 .lead {
@@ -23,7 +30,7 @@
   gap: 28px;
   align-items: start;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(31, 26, 28, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .card:last-child {
@@ -45,9 +52,9 @@
   overflow: hidden;
   aspect-ratio: 16 / 10;
   min-height: 280px;
-  border: 1px solid rgba(31, 26, 28, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: linear-gradient(135deg, rgba(47, 93, 83, 0.55), rgba(47, 93, 83, 0.35));
-  box-shadow: 0 16px 40px rgba(22, 17, 18, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
 }
 
 .videoPurito {
@@ -75,54 +82,174 @@
   background: #1a1a1a;
 }
 
-.videoLink {
+.videoEl {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
-  border: 0;
-  padding: 0;
-  background: rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
-
-.videoTap {
-  position: absolute;
-  inset: 0;
-  border: 0;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.playCircle {
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-}
-
-.playTriangle {
-  width: 0;
-  height: 0;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-left: 14px solid rgba(93, 32, 40, 0.9);
-  transform: translateX(2px);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #1a1a1a;
 }
 
 .videoCaption {
   position: absolute;
   left: 16px;
-  bottom: 14px;
+  top: 14px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.88);
   font-weight: 700;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.videoScrim {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 88px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.58), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.centerPlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(42, 42, 42, 0.72);
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+  transition: background 140ms ease, transform 140ms ease;
+}
+
+.centerPlay:hover {
+  background: rgba(28, 28, 28, 0.82);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.pauseIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pauseIcon span {
+  display: block;
+  width: 4px;
+  height: 16px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.playIcon {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 13px solid currentColor;
+  transform: translateX(2px);
+}
+
+.bottomControls {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.progressWrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.progressInput {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.progressInput::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.progressInput::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.progressInput::-moz-range-track {
+  height: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.progressInput::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.muteBtn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.muteBtn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.muteBtn svg path:last-child {
+  fill: none;
 }
 
 .text {
@@ -131,14 +258,15 @@
 
 .kicker {
   display: inline-flex;
-  padding: 6px 10px;
+  padding: 7px 11px;
   border-radius: 4px;
-  background: rgba(183, 155, 107, 0.16);
-  border: 1px solid rgba(183, 155, 107, 0.28);
-  color: rgba(93, 32, 40, 0.92);
+  background: var(--accent-2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--accent);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.04em;
+  box-shadow: var(--lime-shadow);
 }
 
 .name {
@@ -154,12 +282,12 @@
   font-family: 'Times New Roman', 'Noto Serif JP', Georgia, serif;
   font-style: italic;
   font-size: 14px;
-  color: var(--accent-2);
+  color: rgba(0, 0, 0, 0.55);
 }
 
 .hook {
   margin-top: 14px;
-  color: rgba(31, 26, 28, 0.72);
+  color: rgba(0, 0, 0, 0.72);
   line-height: 1.85;
   font-size: 14px;
 }
@@ -167,7 +295,7 @@
 .metrics {
   margin-top: 18px;
   padding-top: 16px;
-  border-top: 1px solid rgba(31, 26, 28, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
@@ -188,7 +316,7 @@
 .metricLabel {
   margin-top: 6px;
   font-size: 11px;
-  color: rgba(31, 26, 28, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   line-height: 1.5;
 }
 
@@ -202,7 +330,7 @@
   padding: 14px 20px;
   border-radius: 6px;
   background: var(--accent);
-  color: #fff;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 600;
   text-align: center;
@@ -210,7 +338,7 @@
 }
 
 .moreBar:hover {
-  opacity: 0.92;
+  opacity: 0.88;
 }
 
 @media (max-width: 980px) {

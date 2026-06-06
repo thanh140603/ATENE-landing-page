@@ -41,7 +41,7 @@ export function Navbar() {
 
         <div className={styles.actions}>
           <a className={styles.ctaBtn} href={APPLICATION_FORM_URL} target="_blank" rel="noreferrer">
-            {locale === 'ja' ? '今すぐ申し込む' : 'Apply now'}
+            {locale === 'ja' ? 'パートナー申し込み' : 'Brand Partner'}
           </a>
 
           <div className={styles.localeSwitch} aria-label="Language switcher">

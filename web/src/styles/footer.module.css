@@ -1,7 +1,23 @@
 .band {
-  padding: 64px 0 52px;
-  background: #5d2028;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(56px, 7vw, 88px) 0 clamp(48px, 6vw, 72px);
+  background: var(--bg-dark);
   color: rgba(255, 255, 255, 0.95);
+}
+
+.band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(680px 460px at 50% 0%, var(--lime-glow-dark), transparent 58%);
+}
+
+.band > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .inner {
@@ -9,36 +25,37 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 22px;
+  gap: 24px;
 }
 
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--accent-2);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
+.eyebrowAccent {
+  color: #b8c95a;
+}
+
+.eyebrowMain {
+  color: #ffffff;
+}
+
 .copy {
-  max-width: 720px;
-}
-
-.head {
-  font-size: clamp(32px, 4vw, 52px);
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.highlight {
-  color: var(--accent-2);
-}
-
-.sub {
-  margin: 16px 0 0;
+  max-width: 640px;
+  margin: 0;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.85;
+  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 400;
+}
+
+.emphasis {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .actions {
@@ -46,7 +63,7 @@
   gap: 14px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .btnPrimary,
@@ -58,8 +75,9 @@
   padding: 13px 22px;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 14px;
-  transition: transform 140ms ease;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  transition: opacity 140ms ease;
 }
 
 .btnPrimary {
@@ -76,13 +94,13 @@
 
 .btnPrimary:hover,
 .btnGhost:hover {
-  transform: translateY(-1px);
+  opacity: 0.88;
 }
 
 .contactSmall {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.48);
   line-height: 1.7;
 }
 

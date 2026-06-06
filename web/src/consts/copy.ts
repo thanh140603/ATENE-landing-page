@@ -1,31 +1,29 @@
 export type Copy = {
-  headline: string
+  headlineBefore: string
+  headlineHighlight: string
+  headlineAfter: string
   sub: string
   ctaApply: string
   ctaBook: string
-  commissionExample: string
   counterOffer: string
-  bookingUrgency: string
   brandHooks: {
     PURITO: string
     BABACO: string
     CELONIA: string
     DELERE: string
   }
-  dealTermsProposed: string
   faqApproved: { q: string; a: string }[]
 }
 
 export const COPY_JA: Copy = {
-  headline: '韓国で売れた。次は、あなたの番。',
-  sub: '商品も、専用リンクも、運営サポートも、ぜんぶATENEが用意。あなたは“魅せる”ことに集中するだけ。報酬は最大25%。',
-  ctaApply: '30秒で申し込む',
-  ctaBook: '今すぐ枠を確保する',
-  commissionExample:
-    '例）客単価¥5,000 × 100本販売 = 売上¥500,000 → あなたの報酬 ¥125,000（25%）',
+  headlineBefore: '話題の',
+  headlineHighlight: 'K-BEAUTY',
+  headlineAfter: 'を、\nあなたのライブで',
+  sub: '韓国で実証済みのヒットブランドを、高還元の成果報酬で商品提供 + 専用リンク + 運営サポートまで、ATENEがすべて用意します。\nあとは魅せるだけ。',
+  ctaApply: 'パートナー申し込み',
+  ctaBook: 'ライブ枠を予約',
   counterOffer:
-    '実績に自信のある方へ。レートは交渉可能です。フォームの「希望レート」に数字をご記入ください。',
-  bookingUrgency: '枠は先着順。埋まり次第、締め切ります。',
+    '大きな実績・特別な企画をお持ちの方は、申し込みフォームの「希望レート」欄にご記入ください。\n内容を拝見し、個別にご提案します。',
   brandHooks: {
     PURITO:
       '世界中で話題されたグローバルバイラルブランド。すでに認知度が高く、初見でも視聴者が反応しやすいのが強み。ライブ招待のパートナーにもおすすめです。',
@@ -36,27 +34,35 @@ export const COPY_JA: Copy = {
     DELERE:
       'ATENEの主力ブランド。キャビアを贅沢に使ったプレミアムK-Beautyライン。希少価値が高く、25周年記念仕様、毎回のメガが目玉です。',
   },
-  dealTermsProposed:
-    '無償（1ブランド1〜2点）/ 承認後3〜5営業日 / 月末締め・翌月15日払い / ¥5,000〜 / SNS・広告で二次利用可（クレジット表記）',
   faqApproved: [
-    { q: 'フォロワー数の最低条件はありますか？', a: 'フォロワー1,000人以上が目安（個別相談可）' },
-    { q: '参加に費用はかかりますか？', a: '無料です。' },
-    { q: '日本国外に住んでいても参加できますか？', a: '日本国内配送が基本・海外は要相談' },
-    { q: '報酬の受け取り方法は？', a: '報酬は月末締め翌月15日払い' },
-    { q: '薬機法の表現が不安です。', a: 'ブランド提供の表現ガイドをご用意しています。ご不明点は運営までご相談ください。' },
+    {
+      q: 'フォロワー数の最低条件はありますか？',
+      a: 'フォロワー数の最低条件はありません。ライブ配信の効果やコンテンツの質を重視して評価します。',
+    },
+    {
+      q: '参加に費用はかかりますか？',
+      a: '参加は完全に無料です。ライブ配信で使用する商品は無償で提供され、いかなる費用も発生しません。',
+    },
+    {
+      q: '日本国外に住んでいても参加できますか？',
+      a: '海外在住でも参加可能ですが、商品の配送やタイムゾーンに注意してください。お客様が日本国内であれば問題ありません。海外の場合でもサンプルは受け取れますが、ライブ配信の時間はJSTに合わせて調整する必要があります。',
+    },
+    {
+      q: '報酬の受け取り方法は？',
+      a: '報酬は、あらかじめ合意したサイクル（例：週次または月次）に基づき、あなたのリンクやアフィリエイト経由の売上結果に応じて支払われます。支払い方法は銀行振込または契約で合意した方法となります。',
+    },
   ],
-} as const
+}
 
 export const COPY_EN: Copy = {
-  headline: 'Proven in Korea. Now, it is your turn.',
-  sub: 'ATENE prepares everything for you – products, unique tracking links, and full operational support – so you can focus on creating. Your commission can go up to 25%.',
-  ctaApply: 'Apply in 30 seconds',
-  ctaBook: 'Secure your slot now',
-  commissionExample:
-    'Example) Average order value ¥5,000 × 100 orders = ¥500,000 in sales → Your commission ¥125,000 (25%)',
+  headlineBefore: 'Trending ',
+  headlineHighlight: 'K-BEAUTY',
+  headlineAfter: ' —\non your live.',
+  sub: 'ATENE provides proven hit brands from Korea with high commission rates — products, dedicated links, and full operational support.\nAll you need to do is showcase them.',
+  ctaApply: 'Partner application',
+  ctaBook: 'Reserve live slots',
   counterOffer:
-    'If you have strong past results, we are open to rate negotiations. Please fill in your preferred rate in the “希望レート / desired rate” field in the form.',
-  bookingUrgency: 'Slots are first-come, first-served and will close as soon as they are filled.',
+    'If you have strong track records or special campaign ideas, enter your preferred rate in the application form.\nWe will review and propose individually.',
   brandHooks: {
     PURITO:
       'A globally viral brand that took the world by storm. High awareness means viewers react easily, even on first exposure. Highly recommended for partners doing live invite streams.',
@@ -67,29 +73,22 @@ export const COPY_EN: Copy = {
     DELERE:
       "ATENE's flagship brand. A premium K-Beauty line lavishly formulated with caviar. High scarcity value — 25th anniversary editions make every Mega-wari a headline event.",
   },
-  dealTermsProposed:
-    'Free product (1–2 SKUs per brand) / Ships within 3–5 business days after approval / Payout on the 15th of the following month / Minimum payout ¥5,000 / We may reuse your content for SNS & ads with credit.',
   faqApproved: [
     {
       q: 'Is there a minimum follower count?',
-      a: 'Around 1,000 followers is the guideline (we can discuss case by case).',
+      a: 'There is no minimum follower requirement. We evaluate live performance and content quality.',
     },
     {
       q: 'Does it cost anything to participate?',
-      a: 'No, participation is free.',
+      a: 'Participation is completely free. Products used in your live streams are provided at no cost.',
     },
     {
       q: 'Can I join if I live outside Japan?',
-      a: 'Domestic shipping within Japan is the default. For overseas creators, please consult us first.',
+      a: 'Yes, but note shipping and time zones. If your audience is in Japan, there is no issue. Overseas creators can receive samples, but live times should align with JST.',
     },
     {
       q: 'How and when will I receive my commission?',
-      a: 'We close at the end of each month and pay out on the 15th of the following month.',
-    },
-    {
-      q: 'I am worried about pharmaceutical advertising regulations.',
-      a: 'We provide brand-approved expression guidelines. Please contact us if you have any concerns.',
+      a: 'Commissions are paid based on agreed cycles (e.g. weekly or monthly) according to sales through your links. Payment via bank transfer or as agreed in contract.',
     },
   ],
 }
-

@@ -8,30 +8,30 @@ export function Footer() {
   return (
     <footer className={styles.band}>
       <div className={`container ${styles.inner}`}>
-        <div className={styles.eyebrow}>DON&apos;T MISS MEGA-WARI</div>
-
-        <div className={styles.copy}>
-          <div className={styles.head}>
-            {locale === 'ja' ? (
-              <>
-                メガ割は、<span className={styles.highlight}>6.11</span>まで。
-                <br />
-                枠が埋まる前に。
-              </>
-            ) : (
-              <>
-                Mega-wari ends on <span className={styles.highlight}>6.11</span>.
-                <br />
-                Book before slots fill up.
-              </>
-            )}
-          </div>
-          <p className={styles.sub}>
-            {locale === 'ja'
-              ? '韓国で売れた実証済みブランドを、いちばん良い条件で。先着順のライブ枠が残っているうちに、今すぐパートナー登録を。'
-              : 'Proven K-beauty brands from Korea, on the best terms. Register now while first-come live slots remain.'}
-          </p>
+        <div className={styles.eyebrow}>
+          <span className={styles.eyebrowAccent}>DON&apos;T</span>{' '}
+          <span className={styles.eyebrowMain}>MISS OUT!</span>
         </div>
+
+        <p className={styles.copy}>
+          {locale === 'ja' ? (
+            <>
+              TikTok Shopのライブ枠がまだ空いています。
+              <br />
+              人気ブランドの配信に参加して、あなたのライブで注目を集めましょう。
+              <br />
+              <span className={styles.emphasis}>今すぐパートナー登録を！</span>
+            </>
+          ) : (
+            <>
+              TikTok Shop live slots are still open.
+              <br />
+              Join streams for popular brands and stand out on your live.
+              <br />
+              <span className={styles.emphasis}>Register as a partner now!</span>
+            </>
+          )}
+        </p>
 
         <div className={styles.actions}>
           <a className={styles.btnPrimary} href={APPLICATION_FORM_URL} target="_blank" rel="noreferrer">

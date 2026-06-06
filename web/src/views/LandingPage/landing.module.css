@@ -1,5 +1,22 @@
 .page {
   min-height: 100svh;
   background: var(--bg);
+  position: relative;
+  overflow-x: clip;
 }
 
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(960px 640px at 92% 4%, var(--lime-glow-soft), transparent 56%),
+    radial-gradient(760px 520px at 8% 86%, var(--lime-glow-faint), transparent 54%);
+}
+
+.page > * {
+  position: relative;
+  z-index: 1;
+}

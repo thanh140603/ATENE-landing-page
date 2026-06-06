@@ -1,9 +1,15 @@
 .hero {
+  position: relative;
+  isolation: isolate;
   padding: 76px 0 42px;
   background:
-    radial-gradient(900px 520px at 90% 10%, rgba(93, 32, 40, 0.08), transparent 60%),
-    radial-gradient(780px 520px at 0% 30%, rgba(183, 155, 107, 0.1), transparent 58%),
+    radial-gradient(880px 560px at 94% 8%, var(--lime-glow-strong), transparent 55%),
     var(--bg);
+}
+
+.hero > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
@@ -20,9 +26,24 @@
   padding: 8px 14px;
   border-radius: 999px;
   background: var(--accent);
-  color: #fff;
+  color: #ffffff;
   font-size: 13px;
+  font-weight: 600;
   margin-bottom: 18px;
+}
+
+.eyebrowPill {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.kbeauty {
+  color: var(--accent-brand);
 }
 
 .sub {
@@ -41,21 +62,23 @@
   position: relative;
   background: var(--surface-elevated);
   padding: 28px 20px 16px;
-  box-shadow: 0 18px 50px rgba(22, 17, 18, 0.12);
-  border: 1px solid rgba(31, 26, 28, 0.06);
+  box-shadow: none;
+  border: 1px solid var(--border);
 }
 
 .rateKicker {
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 16px;
-  padding: 5px 10px;
+  padding: 7px 12px;
   background: var(--accent-2);
-  color: #fff;
+  color: var(--accent);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 900;
+  letter-spacing: 0.08em;
   border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--lime-shadow);
 }
 
 .rateTitle {
@@ -74,7 +97,7 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 14px 0;
-  border-top: 1px dotted rgba(31, 26, 28, 0.18);
+  border-top: 1px dotted rgba(0, 0, 0, 0.18);
 }
 
 .rateLine:first-child {
@@ -84,7 +107,7 @@
 
 .rateLabel {
   font-size: 13px;
-  color: rgba(31, 26, 28, 0.68);
+  color: rgba(0, 0, 0, 0.55);
 }
 
 .rateValue {
@@ -96,7 +119,8 @@
 
 .rateValueSmall {
   font-weight: 700;
-  color: var(--accent);
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
 }
 
 .rateLink {
@@ -105,7 +129,7 @@
   margin-top: 14px;
   padding-top: 4px;
   font-size: 12px;
-  color: var(--accent-2);
+  color: rgba(0, 0, 0, 0.55);
   font-weight: 600;
 }
 
@@ -118,4 +142,3 @@
     grid-template-columns: 1fr;
   }
 }
-
