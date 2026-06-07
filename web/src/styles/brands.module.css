@@ -344,6 +344,7 @@
 @media (max-width: 980px) {
   .card {
     grid-template-columns: 1fr;
+    min-width: 0;
   }
 
   .cardReverse .video,
@@ -354,5 +355,14 @@
   .metrics {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  .video {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
   }
 }

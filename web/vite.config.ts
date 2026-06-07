@@ -7,11 +7,11 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
-    allowedHosts: ['anete-landing-page.phthanh.pro'],
+    allowedHosts: ['atene-landing-page.phthanh.pro'],
   },
   preview: {
     host: '0.0.0.0',
     port: 5173,
-    allowedHosts: ['anete-landing-page.phthanh.pro'],
+    allowedHosts: ['atene-landing-page.phthanh.pro'],
   },
 })
