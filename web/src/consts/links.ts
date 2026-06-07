@@ -8,7 +8,7 @@ export const LIVE_BOOKING_URL = '予約確定URL'
 
 export const CONTACT = {
   lineId: 'LINE_ID',
-  email: 'contact@example.com',
-  name: 'Contact Name',
+  email: 'paul@atene.kr',
+  name: 'Paul Lee',
 } as const
 

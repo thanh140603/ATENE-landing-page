@@ -25,18 +25,23 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .brandTile {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   aspect-ratio: 16 / 10;
-  min-height: 132px;
-  background: #f5f5f5;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  min-height: 128px;
+  background: #f0f0f0;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+}
+
+.brandTileMedia {
+  position: absolute;
+  inset: 0;
 }
 
 .brandTileBg {
@@ -46,44 +51,59 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(100%) brightness(0.82) contrast(0.92);
-  transform: scale(1.06);
-}
-
-.brandTileLogoWrap {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
+  filter: grayscale(100%) brightness(0.92) contrast(0.96);
 }
 
 .brandTileLogo {
-  width: min(64%, 148px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
   height: auto;
-  max-height: 72%;
+  max-height: 86%;
   object-fit: contain;
+  display: block;
+  transform: translate(-50%, -50%);
 }
 
-.logoMultiply {
-  mix-blend-mode: multiply;
-  filter:
-    drop-shadow(0 0 5px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 0 12px rgba(255, 255, 255, 0.85))
-    drop-shadow(0 0 24px rgba(255, 255, 255, 0.65));
+.logoKnockoutDarken {
+  mix-blend-mode: darken;
 }
 
-.logoScreen {
-  mix-blend-mode: screen;
+.logoKnockoutCutout {
   filter:
-    drop-shadow(0 0 4px rgba(255, 255, 255, 0.55))
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+    drop-shadow(0 0 2px rgba(255, 255, 255, 0.92))
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.62))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.38));
+}
+
+.brandTile[data-brand='tiam'] .brandTileLogo {
+  max-height: 90%;
+}
+
+.brandTile[data-brand='bbia'] .brandTileLogo {
+  max-height: 82%;
+}
+
+.brandTile[data-brand='vt'] .brandTileLogo {
+  max-height: 88%;
+  width: 84% !important;
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.brandTile[data-brand='therawave'] .brandTileLogo {
+  max-height: 78%;
+}
+
+.brandTile[data-brand='quadthera'] .brandTileLogo {
+  max-height: none;
+  width: 96% !important;
 }
 
 .placeholderOverlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,26 +114,24 @@
 
 .placeholderTitle {
   font-weight: 900;
-  font-size: clamp(18px, 2.2vw, 24px);
-  letter-spacing: 0.06em;
+  font-size: clamp(17px, 2vw, 22px);
+  letter-spacing: 0.05em;
   line-height: 1.1;
   color: #ffffff;
   text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 0 16px rgba(255, 255, 255, 0.75),
-    0 2px 8px rgba(0, 0, 0, 0.35);
+    0 0 6px rgba(255, 255, 255, 0.7),
+    0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .placeholderSubtitle {
-  margin-top: 8px;
+  margin-top: 6px;
   font-weight: 800;
-  font-size: clamp(12px, 1.4vw, 14px);
-  letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(11px, 1.3vw, 13px);
+  letter-spacing: 0.12em;
+  color: #ffffff;
   text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.85),
-    0 0 14px rgba(255, 255, 255, 0.55),
-    0 2px 6px rgba(0, 0, 0, 0.3);
+    0 0 6px rgba(255, 255, 255, 0.65),
+    0 1px 4px rgba(0, 0, 0, 0.22);
 }
 
 @media (max-width: 980px) {

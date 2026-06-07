@@ -1,25 +1,24 @@
-import { COMING_SOON_BRANDS, COMING_SOON_PLACEHOLDER_BG } from '../../../consts/comingSoonBrands'
+import {
+  COMING_SOON_BRANDS,
+  COMING_SOON_PLACEHOLDER_BG,
+  type ComingSoonBrand,
+} from '../../../consts/comingSoonBrands'
 import { useI18n } from '../../../app/i18n/I18nContext'
 import styles from '../../../styles/comingSoon.module.css'
 
-type BrandTileProps = {
-  background: string
-  logo: string
-  name: string
-  logoBlend: 'multiply' | 'screen'
-  logoWidth?: string
-}
+function BrandTile({ brand }: { brand: ComingSoonBrand }) {
+  const knockoutClass =
+    brand.knockout === 'darken' ? styles.logoKnockoutDarken : styles.logoKnockoutCutout
 
-function BrandTile({ background, logo, name, logoBlend, logoWidth }: BrandTileProps) {
   return (
-    <div className={styles.brandTile}>
-      <img className={styles.brandTileBg} src={background} alt="" />
-      <div className={styles.brandTileLogoWrap}>
+    <div className={styles.brandTile} data-brand={brand.id}>
+      <div className={styles.brandTileMedia}>
+        <img className={styles.brandTileBg} src={brand.background} alt="" />
         <img
-          className={`${styles.brandTileLogo} ${logoBlend === 'multiply' ? styles.logoMultiply : styles.logoScreen}`}
-          src={logo}
-          alt={name}
-          style={logoWidth ? { width: logoWidth } : undefined}
+          className={`${styles.brandTileLogo} ${knockoutClass}`}
+          src={brand.logo}
+          alt={brand.name}
+          style={{ width: brand.logoWidth }}
         />
       </div>
     </div>
@@ -27,14 +26,14 @@ function BrandTile({ background, logo, name, logoBlend, logoWidth }: BrandTilePr
 }
 
 function PlaceholderTile() {
-  const { locale } = useI18n()
-
   return (
-    <div className={styles.brandTile}>
-      <img className={styles.brandTileBg} src={COMING_SOON_PLACEHOLDER_BG} alt="" />
-      <div className={styles.placeholderOverlay}>
-        <div className={styles.placeholderTitle}>{locale === 'ja' ? 'NEW BRAND' : 'NEW BRAND'}</div>
-        <div className={styles.placeholderSubtitle}>COMING SOON...</div>
+    <div className={styles.brandTile} data-brand="placeholder">
+      <div className={styles.brandTileMedia}>
+        <img className={styles.brandTileBg} src={COMING_SOON_PLACEHOLDER_BG} alt="" />
+        <div className={styles.placeholderOverlay}>
+          <div className={styles.placeholderTitle}>NEW BRAND</div>
+          <div className={styles.placeholderSubtitle}>COMING SOON...</div>
+        </div>
       </div>
     </div>
   )
@@ -60,14 +59,7 @@ export function ComingSoonSection() {
 
         <div className={styles.grid}>
           {COMING_SOON_BRANDS.map((brand) => (
-            <BrandTile
-              key={brand.id}
-              background={brand.background}
-              logo={brand.logo}
-              name={brand.name}
-              logoBlend={brand.logoBlend}
-              logoWidth={brand.logoWidth}
-            />
+            <BrandTile key={brand.id} brand={brand} />
           ))}
           <PlaceholderTile />
         </div>
