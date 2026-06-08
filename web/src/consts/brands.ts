@@ -1,7 +1,7 @@
-import puritoVideo from '../assets/vids/purito.mp4'
-import babacoVideo from '../assets/vids/babaco.mp4'
-import celoniaVideo from '../assets/vids/celonia.mp4'
-import delereVideo from '../assets/vids/delere.mp4'
+import puritoVideo from '../assets/vids/Purito Edited.mp4'
+import babacoVideo from '../assets/vids/Babaco edited.mp4'
+import celoniaVideo from '../assets/vids/Celonia_Edited.mp4'
+import delereVideo from '../assets/vids/Delere_Edited.mp4'
 
 export type BrandId = 'PURITO' | 'BABACO' | 'CELONIA' | 'DELERE'
 
